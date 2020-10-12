@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             text.setText(text.getText() + "0");
         });
 
-        buttonC.setOnClickListener(new View.OnClickListener(){
+        buttonC.setOnClickListener(new View.OnClickListener()){
                 public void onClick (View v){
                     text.setText("");
                     add=false;
@@ -75,8 +75,78 @@ public class MainActivity extends AppCompatActivity {
                     mul=false;
                     value1=0;
                     value2=0;
-                }}
-        );
+                }
+        });
+
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (text == null) {
+                    text.setText("");
+                } else {
+                    value1 = Float.parseFloat(text.getText() + "");
+                    add = true;
+                    text.setText(null);
+                }
+            }
+        });
+
+        buttonSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                value1 = Float.parseFloat(text.getText() + "");
+                sub = true;
+                text.setText(null);
+            }
+        });
+
+        buttonMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                value1 = Float.parseFloat(text.getText() + "");
+                mul = true;
+                text.setText(null);
+            }
+        });
+
+        buttonDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                value1 = Float.parseFloat(text.getText() + "");
+                div = true;
+                text.setText(null);
+            }
+        });
+
+        buttonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                value2 = Float.parseFloat(text.getText() + "");
+
+                if (add == true) {
+                    text.setText(value1 + value2 + "");
+                    add = false;
+                }
+
+                if (sub == true) {
+                    text.setText(value1 - value2 + "");
+                    sub = false;
+                }
+
+                if (mul == true) {
+                    text.setText(value1 * value2 + "");
+                    mul = false;
+                }
+
+                if (div == true) {
+                    text.setText(value1 / value2 + "");
+                    div = false;
+                }
+            }
+        });
+
+
 
         
 
