@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.EditText;
 
 
 
 public class MainActivity extends AppCompatActivity {
-    Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9,
+    Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10,
             buttonAdd, buttonSub, buttonDivision, buttonMul, buttonC, buttonEqual;
 
     TextView text;
@@ -24,7 +25,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //construct buttons and the other elements here, name are given above//
+
+        button0 = (Button) findViewById(R.id.btn0);
+        button1 = (Button) findViewById(R.id.btn1);
+        button2 = (Button) findViewById(R.id.btn2);
+        button3 = (Button) findViewById(R.id.btn3);
+        button4 = (Button) findViewById(R.id.btn4);
+        button5 = (Button) findViewById(R.id.btn5);
+        button6 = (Button) findViewById(R.id.btn6);
+        button7 = (Button) findViewById(R.id.btn7);
+        button8 = (Button) findViewById(R.id.btn8);
+        button9 = (Button) findViewById(R.id.btn9);
+        button10 = (Button) findViewById(R.id.btnDec);
+        buttonAdd = (Button) findViewById(R.id.btnAdd);
+        buttonSub = (Button) findViewById(R.id.btnSub);
+        buttonMul = (Button) findViewById(R.id.btnMul);
+        buttonDivision = (Button) findViewById(R.id.btnDiv);
+        buttonC = (Button) findViewById(R.id.btnClear);
+        buttonEqual = (Button) findViewById(R.id.btnEqual);
+        text = (TextView) findViewById(R.id.screen);
 
         button1.setOnClickListener((v)->{
             text.setText(text.getText() + "1");
@@ -66,16 +85,24 @@ public class MainActivity extends AppCompatActivity {
             text.setText(text.getText() + "0");
         });
 
-        buttonC.setOnClickListener(new View.OnClickListener()){
-                public void onClick (View v){
-                    text.setText("");
-                    add=false;
-                    sub=false;
-                    div=false;
-                    mul=false;
-                    value1=0;
-                    value2=0;
-                }
+        button10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                text.setText(text.getText() + ".");
+            }
+        });
+
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                text.setText("");
+                add=false;
+                sub=false;
+                div=false;
+                mul=false;
+                value1=0;
+                value2=0;
+            }
         });
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
