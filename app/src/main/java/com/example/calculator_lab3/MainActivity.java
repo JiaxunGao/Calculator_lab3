@@ -46,48 +46,82 @@ public class MainActivity extends AppCompatActivity {
         text = (TextView) findViewById(R.id.screen);
 
         button1.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "1");
         });
 
         button2.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "2");
         });
 
         button3.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "3");
         });
 
         button4.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "4");
         });
 
         button5.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "5");
         });
 
         button6.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "6");
         });
 
         button7.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "7");
         });
 
         button8.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "8");
         });
 
         button9.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "9");
         });
 
         button0.setOnClickListener((v)->{
+            if(text.getText() == "ERROR"){
+                text.setText("");
+            }
             text.setText(text.getText() + "0");
         });
 
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(text.getText() == "ERROR"){
+                    text.setText("");
+                }
+
                 text.setText(text.getText() + ".");
             }
         });
@@ -112,9 +146,11 @@ public class MainActivity extends AppCompatActivity {
                 if (text == null) {
                     text.setText("");
                 } else {
+
                     value1 = Float.parseFloat(text.getText() + "");
                     add = true;
                     text.setText(null);
+
                 }
             }
         });
@@ -122,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 value1 = Float.parseFloat(text.getText() + "");
                 sub = true;
                 text.setText(null);
@@ -140,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDivision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 value1 = Float.parseFloat(text.getText() + "");
                 div = true;
                 text.setText(null);
@@ -149,27 +187,32 @@ public class MainActivity extends AppCompatActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                value2 = Float.parseFloat(text.getText() + "");
+                if (text.getText()== "" || text.getText()== "ERROR" ) {
+                    text.setText("ERROR");
+                }else{
+                    value2 = Float.parseFloat(text.getText() + "");
 
-                if (add == true) {
-                    text.setText(value1 + value2 + "");
-                    add = false;
+                    if (add == true) {
+                        text.setText(value1 + value2 + "");
+                        add = false;
+                    }
+
+                    if (sub == true) {
+                        text.setText(value1 - value2 + "");
+                        sub = false;
+                    }
+
+                    if (mul == true) {
+                        text.setText(value1 * value2 + "");
+                        mul = false;
+                    }
+
+                    if (div == true) {
+                        text.setText(value1 / value2 + "");
+                        div = false;
+                    }
                 }
 
-                if (sub == true) {
-                    text.setText(value1 - value2 + "");
-                    sub = false;
-                }
-
-                if (mul == true) {
-                    text.setText(value1 * value2 + "");
-                    mul = false;
-                }
-
-                if (div == true) {
-                    text.setText(value1 / value2 + "");
-                    div = false;
-                }
             }
         });
 
