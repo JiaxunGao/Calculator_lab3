@@ -26,8 +26,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="113dp"
-        android:layout_marginLeft="113dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
         android:layout_marginTop="115dp"
         android:text="8" />
 
@@ -38,9 +38,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="213dp"
-        android:layout_marginLeft="213dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="114dp"
         android:text="9" />
 
     <Button

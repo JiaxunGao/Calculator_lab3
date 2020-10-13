@@ -18,8 +18,14 @@ public class MainActivity extends AppCompatActivity {
     float value1, value2;
     boolean add, sub, div, mul;
 
+    protected void resetB() {
+        add=false;
+        sub=false;
+        div=false;
+        mul=false;
 
-    @Override
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -44,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         buttonC = (Button) findViewById(R.id.btnClear);
         buttonEqual = (Button) findViewById(R.id.btnEqual);
         text = (TextView) findViewById(R.id.screen);
+
+        //Operation functions  //
+
+
 
         button1.setOnClickListener((v)->{
             if(text.getText() == "ERROR"){
@@ -116,9 +126,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         button10.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
-                if(text.getText() == "ERROR"){
+                if(text.getText() == "ERROR"||text.getText() == ""){
                     text.setText("");
                 }
 
@@ -127,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonC.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
                 text.setText("");
                 add=false;
@@ -140,52 +150,145 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
 
-                if (text == null) {
+                if (text.getText() == ""|| text.getText()== "ERROR") {
                     text.setText("");
                 } else {
+                    if (add == true) {
+                        value1 = value1+Float.parseFloat(text.getText() + "");
+                    }
 
-                    value1 = Float.parseFloat(text.getText() + "");
+                    else if (sub == true) {
+                        value1 = value1-Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (mul == true) {
+                        value1 = value1*Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (div == true) {
+                        value1 = value1/Float.parseFloat(text.getText() + "");
+                    }
+                    else{
+                        value1 = Float.parseFloat(text.getText() + "");
+
+                    }
+                    resetB();
                     add = true;
                     text.setText(null);
+
 
                 }
             }
         });
 
         buttonSub.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
 
-                value1 = Float.parseFloat(text.getText() + "");
-                sub = true;
-                text.setText(null);
+                if (text.getText() == ""|| text.getText()== "ERROR") {
+                    text.setText("");
+                } else {
+                    if (add == true) {
+                        value1 = value1+Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (sub == true) {
+                        value1 = value1-Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (mul == true) {
+                        value1 = value1*Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (div == true) {
+                        value1 = value1/Float.parseFloat(text.getText() + "");
+                    }
+                    else{
+                        value1 = Float.parseFloat(text.getText() + "");
+
+                    }
+                    resetB();
+                    sub = true;
+                    text.setText(null);
+
+
+                }
             }
         });
 
         buttonMul.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
-                value1 = Float.parseFloat(text.getText() + "");
-                mul = true;
-                text.setText(null);
+
+                if (text.getText() == ""|| text.getText()== "ERROR") {
+                    text.setText("");
+                } else {
+                    if (add == true) {
+                        value1 = value1+Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (sub == true) {
+                        value1 = value1-Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (mul == true) {
+                        value1 = value1*Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (div == true) {
+                        value1 = value1/Float.parseFloat(text.getText() + "");
+                    }
+                    else{
+                        value1 = Float.parseFloat(text.getText() + "");
+
+                    }
+                    resetB();
+                    mul = true;
+                    text.setText(null);
+
+
+                }
             }
         });
 
         buttonDivision.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
 
-                value1 = Float.parseFloat(text.getText() + "");
-                div = true;
-                text.setText(null);
+                if (text.getText() == ""|| text.getText()== "ERROR") {
+                    text.setText("");
+                } else {
+                    if (add == true) {
+                        value1 = value1+Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (sub == true) {
+                        value1 = value1-Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (mul == true) {
+                        value1 = value1*Float.parseFloat(text.getText() + "");
+                    }
+
+                    else if (div == true) {
+                        value1 = value1/Float.parseFloat(text.getText() + "");
+                    }
+                    else{
+                        value1 = Float.parseFloat(text.getText() + "");
+
+                    }
+                    resetB();
+                    div = true;
+                    text.setText(null);
+
+
+                }
             }
         });
 
         buttonEqual.setOnClickListener(new View.OnClickListener() {
-            @Override
+
             public void onClick(View v) {
                 if (text.getText()== "" || text.getText()== "ERROR" ) {
                     text.setText("ERROR");
